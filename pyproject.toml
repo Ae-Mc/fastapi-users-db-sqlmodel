@@ -32,19 +32,11 @@ dependencies = [
 [tool.hatch.envs.default.scripts]
 test = "pytest --cov=fastapi_users_db_sqlmodel/ --cov-report=term-missing --cov-fail-under=100"
 test-cov-xml = "pytest --cov=fastapi_users_db_sqlmodel/ --cov-report=xml --cov-fail-under=100"
-lint = [
-  "black . ",
-  "ruff --fix .",
-  "mypy fastapi_users_db_sqlmodel/",
-]
-lint-check = [
-  "black --check .",
-  "ruff .",
-  "mypy fastapi_users_db_sqlmodel/",
-]
+lint = ["black . ", "ruff --fix .", "mypy fastapi_users_db_sqlmodel/"]
+lint-check = ["black --check .", "ruff .", "mypy fastapi_users_db_sqlmodel/"]
 
 [tool.hatch.build.targets.sdist]
-support-legacy = true  # Create setup.py
+support-legacy = true # Create setup.py
 
 [build-system]
 requires = ["hatchling", "hatch-regex-commit"]
@@ -52,9 +44,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "fastapi-users-db-sqlmodel"
-authors = [
-    { name = "François Voron", email = "fvoron@gmail.com" },
-]
+authors = [{ name = "François Voron", email = "fvoron@gmail.com" }]
 description = "FastAPI Users database adapter for SQLModel"
 readme = "README.md"
 dynamic = ["version"]
@@ -74,7 +64,7 @@ classifiers = [
 ]
 requires-python = ">=3.7"
 dependencies = [
-    "fastapi-users @ git+https://github.com/Ae-Mc/fastapi-users@add-refresh-token",
+    "fastapi-users @ git+https://github.com/Ae-Mc/fastapi-users@form-refresh-token",
     "greenlet",
     "sqlmodel",
 ]
